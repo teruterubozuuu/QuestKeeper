@@ -39,7 +39,6 @@ form div{
 }
 
 
-
 #login-btn, #register-btn{
     width:100%;
 }
@@ -55,4 +54,9 @@ form div{
     display:flex;
     justify-content: center;
     gap:2rem;
+}
+
+.sns{
+    border:none;
+    background-color: transparent;
 }

@@ -2,17 +2,19 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {auth, googleProvider} from "../firebase";
-import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider}from 'firebase/auth';
+import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, setPersistence, browserLocalPersistence, browserSessionPersistence, signInWithRedirect}from 'firebase/auth';
 
 import "./LoginRegister.css";
 
 export default function LoginPage() {
   const navigate = useNavigate();
 
+  const [isChecked,setIsChecked] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
+    setPersistence(auth, isChecked ? browserLocalPersistence : browserSessionPersistence);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -21,12 +23,13 @@ export default function LoginPage() {
         navigate("/homepage")
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error);
       });
+
   };
 
   const googleSignIn =()=>{
+    setPersistence(auth, isChecked ? browserLocalPersistence : browserSessionPersistence);
     signInWithPopup(auth, googleProvider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -40,7 +43,9 @@ export default function LoginPage() {
   }).catch((error) => {
     console.log(error)
   });
-  }
+
+}
+  
 
   return (
     <div className="login-parent-container">
@@ -81,7 +86,7 @@ export default function LoginPage() {
 
           <div className="remember-forgot-pass-container">
             <label>
-              <input type="checkbox" class="nes-checkbox" />
+              <input type="checkbox" class="nes-checkbox" checked={isChecked} onChange={(e)=> setIsChecked(e.target.checked)}/>
               <span>Remember Me</span>
             </label>
             <span>Forgot Password?</span>

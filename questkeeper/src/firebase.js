@@ -4,7 +4,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 // Use Vite environment variable system
-const apiKey = import.meta.env.REACT_APP_API_KEY;
+const apiKey = import.meta.env.VITE_APP_API_KEY;
+console.log(apiKey);
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
