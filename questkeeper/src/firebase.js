@@ -3,13 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+// Use Vite environment variable system
+const apiKey = import.meta.env.REACT_APP_API_KEY;
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBmKGXUd9i1w9rx4gmJbKj_3vsMftxGve0",
+  apiKey: `${apiKey}`,
   authDomain: "questkeeper-bd4d6.firebaseapp.com",
   projectId: "questkeeper-bd4d6",
   storageBucket: "questkeeper-bd4d6.firebasestorage.app",
