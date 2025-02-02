@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {auth} from "../firebase";
-import {signInWithEmailAndPassword}from 'firebase/auth';
+import {auth, googleProvider} from "../firebase";
+import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider}from 'firebase/auth';
 
 import "./LoginRegister.css";
 
@@ -19,13 +19,28 @@ export default function LoginPage() {
         const user = userCredential.user;
         console.log(user);
         navigate("/homepage")
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
   };
+
+  const googleSignIn =()=>{
+    signInWithPopup(auth, googleProvider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+    navigate("/homepage")
+  }).catch((error) => {
+    console.log(error)
+  });
+  }
 
   return (
     <div className="login-parent-container">
@@ -81,7 +96,7 @@ export default function LoginPage() {
           </button>
           <p className="sns-options">or login with</p>
           <div className="sns-icons">
-            <i class="nes-icon gmail is-medium"></i>
+            <i class="nes-icon google is-medium" onClick={()=> googleSignIn()}></i>
             <i class="nes-icon github is-medium"></i>
           </div>
         </form>

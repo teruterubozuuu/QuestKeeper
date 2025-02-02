@@ -61,11 +61,6 @@ export default function Register() {
              <button type="button" class="btn" id="register-btn" onClick={()=> handleSubmit()}>
                  SIGN UP
                </button>
-             <p className="sns-options">or sign up with</p>
-             <div className="sns-icons">
-               <i class="nes-icon gmail is-medium"></i>
-               <i class="nes-icon github is-medium"></i>
-               </div>
            </form>
    
          </div>
