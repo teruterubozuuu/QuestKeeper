@@ -1,0 +1,57 @@
+.redirectLink{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    flex:1;
+}
+
+.nes-input{
+    border:3px black solid;
+}
+
+.form-container{
+    display:flex;
+    justify-content: center;
+}
+
+form{
+    border: 5px solid;
+    padding:20px;
+    box-shadow:8px 8px rgb(206, 206, 206);
+}
+
+form h2{
+    text-align: center;
+    padding:20px;
+}
+
+
+form div{
+    padding:10px 0;
+}
+
+.remember-forgot-pass-container{
+    display:flex;
+    gap:2rem;
+    font-size:0.9rem;
+}
+
+
+
+
+#login-btn{
+    width:100%;
+  
+}
+
+.sns-options{
+    padding-top:20px;
+    text-align: center;
+    color:rgb(71, 71, 71);
+}
+
+.sns-icons{
+    display:flex;
+    justify-content: center;
+    gap:2rem;
+}
