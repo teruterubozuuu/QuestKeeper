@@ -77,7 +77,7 @@ export default function LoginPage() {
           <div class="nes-field">
             <label for="password">Password</label>
             <input
-              type="text"
+              type="password"
               id="password"
               class="nes-input"
               onChange={(e) => setPassword(e.target.value)}
@@ -102,7 +102,7 @@ export default function LoginPage() {
           <p className="sns-options">or login with</p>
           <div className="sns-icons">
             <i class="nes-icon google is-medium" onClick={()=> googleSignIn()}></i>
-            <i class="nes-icon github is-medium"></i>
+            <i class="nes-icon github is-medium" onClick={()=> githubSignIn()}></i>
           </div>
         </form>
       </div>

@@ -54,7 +54,7 @@ export default function Register() {
              </div>
              <div class="nes-field">
                <label for="password">Password</label>
-               <input type="text" id="password" class="nes-input" onChange={e => setPassword(e.target.value)}></input>
+               <input type="password" id="password" class="nes-input" onChange={e => setPassword(e.target.value)}></input>
              </div>
    
             
