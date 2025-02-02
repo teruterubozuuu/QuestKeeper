@@ -1,0 +1,22 @@
+.nav-parent-container{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 20px;
+}
+
+.nav-menu{
+    display:flex;
+    gap:2rem;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    flex:1;
+}
+
+.nav-menu li{
+    list-style: none;
+
+}
+
+.logo, .nav-item{
+    padding:12px 0;
+}
