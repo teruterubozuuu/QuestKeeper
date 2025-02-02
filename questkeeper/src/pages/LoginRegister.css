@@ -12,11 +12,12 @@
 .form-container{
     display:flex;
     justify-content: center;
+    
 }
 
 form{
     border: 5px solid;
-    padding:20px;
+    padding:30px;
     box-shadow:8px 8px rgb(206, 206, 206);
 }
 
@@ -30,6 +31,7 @@ form div{
     padding:10px 0;
 }
 
+
 .remember-forgot-pass-container{
     display:flex;
     gap:2rem;
@@ -38,11 +40,10 @@ form div{
 
 
 
-
-#login-btn{
+#login-btn, #register-btn{
     width:100%;
-  
 }
+
 
 .sns-options{
     padding-top:20px;
