@@ -1,13 +1,15 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+@import "tailwindcss";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Press Start 2P", sans-serif;
 }
 
 
-body{
-    font-family: "Press Start 2P", serif;
-}
 
 .btn{
     background-color: transparent;
@@ -15,6 +17,7 @@ body{
     padding:8px 10px;
     transition:0.5s ease;
     box-shadow:3px 3px rgb(206, 206, 206);
+    color:black;
 }
 
 .btn:hover{
@@ -22,3 +25,10 @@ body{
     box-shadow:3px 3px rgb(177, 177, 177);
 }
 
+input[type="button"]:focus{
+  outline: none;
+}
+
+.nes-input{
+  border:5px solid black;
+}

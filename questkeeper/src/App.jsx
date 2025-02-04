@@ -5,8 +5,11 @@ import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import Register from "./pages/Register";
-import HomePage from "./pages/HomePage";
+import QuestBoard from "./pages/QuestBoard";
 import { auth } from "./firebase";
+
+
+
 
 function App() {
   const [user,setUser] =useState(null);
@@ -25,7 +28,7 @@ function App() {
             <Route path="/" element={<LandingPage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/register" element={<Register/>}></Route>
-            <Route path="/homepage" element={user?<HomePage/> : <LoginPage/>}></Route>
+            <Route path="/questboard" element={user?<QuestBoard/> : <LoginPage/>}></Route>
           </Routes>
     </Router>
     </>

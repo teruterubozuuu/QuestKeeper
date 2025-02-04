@@ -1,0 +1,16 @@
+.quest-card{
+    border:5px solid black;
+    margin:20px 0;
+    padding:20px;
+    width:250px;
+    max-width:250px;
+    height:250px;
+}
+
+.addquest{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height:200px;
+}

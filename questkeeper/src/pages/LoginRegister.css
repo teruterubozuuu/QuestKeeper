@@ -39,10 +39,14 @@ form div{
 }
 
 
-#login-btn, #register-btn{
-    width:100%;
+.login-register-btn{
+   display:flex;
+   justify-content: center;
 }
 
+#register-btn,#login-btn{
+    width:97%;
+}
 
 .sns-options{
     padding-top:20px;

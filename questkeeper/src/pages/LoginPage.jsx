@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {auth, googleProvider} from "../firebase";
-import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, setPersistence, browserLocalPersistence, browserSessionPersistence, signInWithRedirect}from 'firebase/auth';
+import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, setPersistence, browserLocalPersistence, browserSessionPersistence}from 'firebase/auth';
 
 import "./LoginRegister.css";
 
@@ -20,7 +20,7 @@ export default function LoginPage() {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigate("/homepage")
+        navigate("/questboard")
       })
       .catch((error) => {
         console.log(error);
@@ -39,7 +39,7 @@ export default function LoginPage() {
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
     // ...
-    navigate("/homepage")
+    navigate("/questboard")
   }).catch((error) => {
     console.log(error)
   });
@@ -51,7 +51,7 @@ export default function LoginPage() {
     <div className="login-parent-container">
       <nav className="nav-parent-container">
         <Link to="/">
-          <h1 className="logo">LOGO</h1>
+          <h1 className="text-3xl font-bold">LOGO</h1>
         </Link>
         <div className="redirectLink">
           <Link to="/register">
@@ -64,7 +64,7 @@ export default function LoginPage() {
 
       <div className="form-container">
         <form>
-          <h2>Login</h2>
+          <h2 class="text-3xl font-bold">Login</h2>
           <div class="nes-field">
             <label for="email_address">Email Address</label>
             <input
@@ -91,6 +91,8 @@ export default function LoginPage() {
             </label>
             <span>Forgot Password?</span>
           </div>
+
+          <div className="login-register-btn">
           <button
             type="button"
             class="btn"
@@ -99,10 +101,12 @@ export default function LoginPage() {
           >
             LOGIN
           </button>
+          </div>
+
           <p className="sns-options">or login with</p>
           <div className="sns-icons">
-            <i class="nes-icon google is-medium" onClick={()=> googleSignIn()}></i>
-            <i class="nes-icon github is-medium" onClick={()=> githubSignIn()}></i>
+            <i class="nes-icon google is-medium" onClick={()=>googleSignIn()}></i>
+           <i class="nes-icon github is-medium"></i>
           </div>
         </form>
       </div>

@@ -17,7 +17,7 @@ export default function Register() {
     .then((userCredential) =>{
       const user = userCredential.user;
       console.log(user);
-      navigate("/homepage")
+      navigate("/login")
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -30,7 +30,7 @@ export default function Register() {
     <div className="login-parent-container">
          <nav className="nav-parent-container">
            <Link to="/">
-             <h1 className="logo">LOGO</h1>
+             <h1 class="text-3xl font-bold">LOGO</h1>
            </Link>
            <div className="redirectLink">
              <Link to="/login">
@@ -43,7 +43,7 @@ export default function Register() {
    
          <div className="form-container">
            <form>
-             <h2>Sign Up</h2>
+             <h2 class="text-3xl font-bold">Sign Up</h2>
              <div class="nes-field">
                <label for="email_address">Email Address</label>
                <input type="text" id="email_address" class="nes-input" onChange={e => setEmail(e.target.value)}></input>
@@ -57,10 +57,11 @@ export default function Register() {
                <input type="password" id="password" class="nes-input" onChange={e => setPassword(e.target.value)}></input>
              </div>
    
-            
-             <button type="button" class="btn" id="register-btn" onClick={()=> handleSubmit()}>
+            <div className="login-register-btn">
+            <button type="button" class="btn" id="register-btn" onClick={()=> handleSubmit()}>
                  SIGN UP
                </button>
+            </div>
            </form>
    
          </div>
